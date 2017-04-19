@@ -1,0 +1,492 @@
+<html><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<meta name="baidu-site-verification" content="Tn08RObQFn">
+<title>微信支付 - 中国领先的第三方支付平台 ｜ 微信支付提供安全快捷的支付方式</title>
+<meta name="keywords" content="微信支付,微信,支付,移动支付,手机支付,微支付,微信支付开通,微信支付接入,微信支付申请,微信支付官网,微信支付商户平台,微信支付接口开发,微信支付接口申请,微信支付客服,微信支付登录">
+<meta name="description" content="微信支付是腾讯公司的支付业务品牌，微信支付提供公众号支付、APP支付、扫码支付、刷卡支付等支付方式。微信支付结合微信公众账号，全面打通O2O生活消费领域，提供专业的互联网+行业解决方案，微信支付支持微信红包和微信理财通，是移动支付的首选。">
+<link rel="shortcut icon" href="https://wx.gtimg.com/core/favicon.ico" type="image/x-icon">
+<style>
+body,ol,ul,h1,h2,h3,h4,h5,h6,p{margin:0;padding:0;}
+body{min-width:1200px;font:14px "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9ED1\4F53",Arial,sans-serif;background:#fff;-webkit-text-size-adjust:100%;color:#222;}
+a{color:#459ae9;text-decoration:none;}
+a:hover{color:#459ae9;text-decoration:underline;}
+i,em{font-style:normal;}
+strong{font-weight:normal;}
+li{list-style:none;}
+img{border:0;vertical-align:middle;}
+table{border-collapse:collapse;border-spacing:0;}
+.hide{display:none;}
+.red{color:#e15f63!important;}
+
+.login-form label,.cbx,.warn,.ico-new,.ico-right,.payment .icon,.payment .corner{background:url(https://wx.gtimg.com/pay/img/home/base.png?v=20160410) no-repeat;overflow:hidden;}
+
+.clr:after{content:".";clear:both;display:block;height:0;visibility:hidden;}
+.clr{zoom:1;}
+.hide{display:none;}
+.vs{margin:0 10px;font-family:arial;color:#ccc;}
+.cbx{width:16px;height:16px;display:inline-block;margin:-3px 6px 0 0;*margin-top:0;vertical-align:middle;cursor:pointer;overflow:hidden;}
+.cbx{background-position:0 -54px;}
+.cbx-on{background-position:0 -80px;display:inline-block;}
+ 
+.wrap{width:1025px;margin:0 auto;overflow:hidden;zoom:1;}
+.container{margin:25px auto;}
+.topbar{height:33px;line-height:33px;color:#999;background:#f6f6f6;border-bottom:1px solid #dcdcdc;font:12px/33px tahoma,arial,"Hiragino Sans GB",\5B8B\4F53,sans-serif;}
+.topbar a{color:#00c901;}
+
+.header{position:relative;z-index:99;background-color:#fff;border-bottom:1px solid #d9dadc;}
+.header .wrap{height:60px;position:relative;overflow:visible;z-index:999}
+.header .logo{float:left;width:232px;overflow:hidden;}
+.header .logo a{display:block;height:40px;margin-top:12px;text-indent:-999px;background:url(https://wx.gtimg.com/pay/img/common/logo.png?v=20160114) no-repeat}
+.header .link{float:right;line-height:60px;}
+.header .link a{color:#222;}
+.header .link a:hover{color:#459ae9}
+.header .pole-msg{display:inline-block;*display:inline;position:relative;}
+.header .pole-msg .content-us{display:inline-block;width:75px;height:60px;position:relative;z-index:9;}
+.header .pole-msg .content-us:hover{color:#222;text-decoration:none;}
+.header .popup{display:none;position:absolute;top:59px;left:-97px;border:1px solid #e7e7eb;z-index:8;width:131px;}
+.header .show-popup .popup{display:block;line-height:26px;padding:14px 20px;background:#fff;}
+.header .show-popup .popup p{font-size:12px;color:#999}
+.header .show-popup .popup .tel{color:#333333;font-size:17px;}
+.header .show-popup .popup .bor-top{border-top:1px solid #e7e7eb;margin-top:10px;padding-top:10px;}
+.header .show-popup .content-us{background:#fff;border-left:1px solid #e7e7eb;border-right:1px solid #e7e7eb;padding-left:16px;margin:0 -1px 0 -17px;*left:-17px;}
+.header .dropdown-arrow{position:absolute;right:6px;top:29px;border-color:#c2c2c2 transparent transparent;border-style:solid dashed dashed;border-width:4px 4px 0;font-size:0;height:0;width:0;line-height:0;}
+.header .show-popup .dropdown-arrow{-webkit-transform:rotate(180deg);-moz-transform:rotate(180deg);-o-transform:rotate(180deg);transform:rotate(180deg);-webkit-transition:all .25s ease 0s;-moz-transition:all .25s ease 0s;-o-transition:all .25s ease 0s;transition:all .25s ease 0s;}
+
+.footer{margin-top:60px;text-align:center;color:#999999;font:12px/1.6 tahoma,arial,"Hiragino Sans GB",\5B8B\4F53,sans-serif;}
+.footer .wrap{padding:25px 0;border-top:1px dotted #ccc;}
+.footer p{margin-bottom:8px;}
+.footer a{color:#999999;}
+.footer a:hover{color:#459ae9}
+
+.banner{height:410px;position:relative;}
+/*.banner .wrap-login{position:relative;}*/
+.banner .login{width:344px;margin:20px 0 0 677px;box-shadow:0 0 1px 1px #cecece;background:rgba(255,255,255,0.8);position: relative; z-index:8}
+.banner .login .login-in{border:1px solid #fff;padding:15px 15px 20px;}
+@media \0screen\,screen\9{
+.banner .login{background:#fff;filter:alpha(opacity=80);}
+.banner .login .login-in{position:relative;_position:static;}
+}
+.banner .login h2{margin-bottom:5px;font-size:20px;font-weight:400;}
+.banner .login h2 strong{display:none;}
+.banner .login a{color:#333}
+.banner .login a:hover{color:#459ae9}
+.banner .login .tips-error a{color:#459ae9}
+.banner .login .tips-error{line-height:24px;font-size:13px;color:#e15f63;}
+.banner .login .tips-warn .warn{float:left;width:16px;height:16px;background-position:-24px 0;margin-top:4px;}
+.banner .login .tips-warn p{float:right;color:#b29b4a;width:290px;font-size:13px;line-height:24px}
+.banner .login-form .login-mainly{margin-top:10px;margin-bottom:10px;}
+.banner .login-form .login-account,.banner .login-form .login-password{height:42px;line-height:42px;padding:3px 0;background:#fff;border-left:1px solid #cecece;border-top:1px solid #cecece;padding-left:54px;}
+.banner .login-form label{width:20px;height:20px;overflow:hidden;line-height:999px;float:left;margin:12px 0 0 -35px; position:absolute;}
+.banner .login-form input{width:100%;padding:11px 0;border:0;box-shadow:0;outline:0;font-family:"Microsoft YaHei";font-size:14px;}
+.banner .login-form .ico-account{background-position:0 0;}
+.banner .login-form .ico-password{background-position:0 -26px;}
+.banner .login-form .login-password{margin-top:10px;}
+.banner .login-password-on .login-account{border-bottom:none;}
+.banner .login-verify{margin-bottom:10px;height:38px;}
+.banner .login-verify input{width:100px;padding:10px;vertical-align:middle;border-left:1px solid #cecece;border-top:1px solid #cecece;}
+.banner .login-verify input:focus{border-left:1px solid #cecece;border-top:1px solid #cecece;}
+.banner .login-verify .img-verify{width:100px;height:40px;margin:0 11px;vertical-align:middle;}
+.banner .login-memory{margin-bottom:20px;overflow:hidden;zoom:1;}
+.banner .login-memory .memory-account{float:left;}
+.banner .login-memory .forget-password{float:right;}
+.banner .login .btn-login{display:inline-block;width:100%;height:45px;line-height:45px;background-color:#00c800;color:#fff;border:1px solid #44b549;text-align:center;font-size:20px;}
+.banner .login .btn-login:hover{text-decoration:none;background:#2F9833;color:#fff;}
+
+
+/*图片轮播*/
+.cms-banner{position:absolute;top:0;width:100%;height:410px;overflow:hidden; left:0}
+.cms-banner a{display:block;width:100%;height:410px;text-indent:-9999px;}
+.cms-banner ul li{position:absolute;top:0;width:100%;height:410px;background-position:center;background-repeat:no-repeat;}
+.cms-banner ol{position:absolute;z-index:9;bottom:0px;display:table;left:50%;margin-left:-73px;padding:16px 16px 16px 0;}
+.cms-banner ol li{float:left;width:10px;height:10px;margin-left:16px;text-indent:-9999px;background:#fff;border-radius:5px;overflow:hidden;}
+.cms-banner ol li.active{background:#44B549;}
+
+
+/*最新公告*/
+.cms-notice{margin-top:5px;position:relative;_zoom:1;}
+.cms-notice h2,.cms-notice ul,.cms-notice p{display:inline-block;line-height:20px;}
+.cms-notice h2{float:left;background:#595B5B;color:#fff;font-size:14px;padding:0px 4px;}
+.cms-notice li{float:left;margin-left:18px;_margin-left:9px;width:275px;}
+.cms-notice a{color:#222}
+.cms-notice a:hover{color:#459ae9}
+.cms-notice li .time{float:left;color:#999;margin-right:5px;}
+.cms-notice li a{display:inline-block;max-width:205px;_width:205px;height:21px;white-space:nowrap;overflow-x:hidden;text-overflow:ellipsis;}
+.cms-notice .more{position:absolute;top:0;right:0;}
+.cms-notice .ico-new{position:absolute;display:inline-block;width:17px;height:9px;margin-left:5px;background:url(https://wx.gtimg.com/mch/img/ico-new.png);}
+.cms-notice .ico-right{display:inline-block;width:11px;height:9px;margin:0 0 0 3px;vertical-align:middle;background-position:-4px -136px;}
+
+
+/*四大支付方式*/
+.payment h2,.tenant h2{font-size:20px;font-weight:normal;margin-bottom:20px;}
+.payment{margin-top:30px;overflow:hidden;}
+.payment ul{width:105%;}
+.payment li{float:left;margin-right:15px;text-align:center;position:relative}
+.payment li a{width:161px;height:266px; padding:0 15px;display:block;position:relative;border:1px solid #e5e5e5;}
+.payment li span{display:block;}
+.payment .icon{display:block;width:70px;height:60px;margin:60px auto 0;-webkit-transition:margin-top 0.2s linear;-moz-transition:margin-top 0.2s linear;-ms-transition:margin-top 0.2s linear;-o-transition:margin-top 0.2s linear;transition:margin-top 0.2s linear;}
+.payment .ico-web{background-position:0 -160px;}
+.payment .ico-app{background-position:0 -220px;}
+.payment .ico-qrcode{background-position:0 -280px;}
+.payment .ico-quick{background-position:0 -340px;}
+.payment .ico-checkout{background-position:0 -400px;}
+.payment .title{display:block;color:#000000;font-size:16px;margin-top:25px;font-weight:normal}
+.payment .intro{color:#999999;font-size:12px;margin-top:15px; line-height:18px;}
+.payment .apply{margin:15px auto 0;width:141px;height:35px;line-height:35px;background-color:#00C800;font-size:14px;color:#FFFFFF;border-bottom:1px solid #00A000;display:none;}
+.payment .corner{width:62px;height:62px;position:absolute;top:0;right:0;background-position:-50px 0}
+.payment a:hover{border:1px solid #00c800;text-decoration:none}
+.payment a:hover .icon{margin-top:35px;-webkit-transition:margin-top 0.2s linear;-moz-transition:margin-top 0.2s linear;-ms-transition:margin-top 0.2s linear;-o-transition:margin-top 0.2s linear;transition:margin-top 0.2s linear;}
+.payment a:hover .apply{display:block;}
+
+.tenant{margin-top:39px;}
+.tenant h2{margin-bottom:10px;}
+.tenant ul{height:312px;background:url(https://wx.gtimg.com/pay/img/home/qrcode.png?v=20150602) center top no-repeat;}
+.tenant li{font-size:16px;margin-top:58px;margin-left:68px;position:absolute;}
+.tenant .l2{margin-top:143px;}
+.tenant .l3{margin-top:228px;}
+.tenant .l4{margin-left:748px;}
+.tenant .l5{margin-top:143px;margin-left:755px;}
+.tenant .l6{margin-top:228px;margin-left:755px;}
+</style>
+</head>
+<body class="index" onclick="pgvWatchClick();">
+
+<!-- 头部[[ -->
+<!-- 头部 [[ -->
+<script>var _speedMark=Date.now()</script>
+<!--小于ie7 跳转到错误页面 -->
+<!--[if lt IE 7]>
+<script>
+    window.location.href='https://pay.weixin.qq.com/public/error/browser_tips';
+</script>
+<![endif]-->
+<div class="topbar">
+    <div class="wrap">
+        <span onclick="pgvSendClick({hottag:'PAY.HOME.NAVI.CHINA_BUSINESS'});">境内业务</span>
+        <i class="vs">|</i>
+        <a onclick="pgvSendClick({hottag:'PAY.HOME.NAVI.INTERNATIONAL_BUSINESS'});" href="https://pay.weixin.qq.com/index.php/public/wechatpay" target="_blank">International business</a>
+    </div>        
+</div>        
+<div class="header">
+    <div class="wrap">
+        <div class="logo"><h1><a href="/index.php/core/account" title="微信支付商户平台">微信支付商户平台</a></h1></div>
+        <div class="link">
+        	<a href="https://pay.weixin.qq.com/partner/public/home" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.NAVI.SERVICE_PROVIDER'});"><strong class="hide">微信支付</strong>服务商</a>
+			<i class="vs">|</i>
+            <a href="https://pay.weixin.qq.com/guide/index.shtml" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.NAVI.GUIDE'});"><strong class="hide">微信支付</strong>接入指引</a>
+            <i class="vs">|</i>
+            <a href="https://pay.weixin.qq.com/wiki/doc/api/index.php" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.NAVI.API_DOC'});"><strong class="hide">微信支付</strong>开发文档</a>
+            <i class="vs">|</i>
+            <div class="pole-msg showPopUpJS">
+                <a class="content-us" href="javascript:;" onclick="pgvSendClick({hottag:'PAY.HOME.NAVI.HELP_CENTER'});">帮助中心<span class="dropdown-arrow"></span></a>
+                <div class="popup">
+                    <div class="inner">
+                    	<ul>
+                        <li>
+                            <p class="tel">客服：95017</p>
+                            <p>周一到周五 09:00-18:00</p>
+                        </li>
+                        <li class="bor-top">
+                        	<a href="http://kf.qq.com/product/wechatpaymentmerchant.html" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.NAVI.QQ_KEFU'});">自助服务专区</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+        </div>
+     </div>
+</div>
+
+<script src="https://wx.gtimg.com/third/jquery/jquery-1.7.min.js"></script>
+<script type="text/javascript">if(typeof $jqueryUi == "undefined"){document.write('<script type="text/javascript" src="https://wx.gtimg.com/third/jquery/jquery-ui.js"></script"+">');}</script><script type="text/javascript" src="https://wx.gtimg.com/third/jquery/jquery-ui.js"></script"+">
+<script>window["MCH.common.time"]=[new Date()]</script>
+<script id="legos:22195" ver="22195:20140901:20170401102432" name="MCH.common" src="https://wx.gtimg.com/mch/js/ver/2014/09/mch.common.20140901.js?t=20170401102432" charset="utf-8"></script><div class="mask-layer hide" id="header-masker"></div><!--[if !IE]>|xGv00|860e846607c84e33b5d2c36d3622d515<![endif]-->
+<script>window["MCH.header.time"]=[new Date()]</script>
+<script id="legos:22118" ver="22118:20140422:20160620111341" name="MCH.header" src="https://wx.gtimg.com/mch/js/ver/2014/04/mch.header.20140422.js?t=20160620111341" charset="utf-8"></script><!--[if !IE]>|xGv00|da289bab2d090281ed2476547ba6b944<![endif]-->
+<!-- 头部 ]] --><!--[if !IE]>|xGv00|bf7ad95e8eeb5339489db35ba4a0c3aa<![endif]-->
+<!-- 头部 ]] -->
+
+<!-- 登录[[ -->
+<div class="banner">
+
+    <div class="cms-banner cms-area" id="cmspic_1000" home="true"><ul><li style="background-image: url(&quot;https://shp.qpic.cn/mmpay/oU5xbewRJusctKA4rU5FNS3b1GZr6mibne4IKGyibj3lFia3jySKI3RDFMWNy9BPVur/0&quot;); opacity: 0; z-index: 0;"><a target="_blank" href="https://pay.weixin.qq.com/public/qrcode_pay">banner</a></li><li style="background-image: url(&quot;https://shp.qpic.cn/mmpay/oU5xbewRJuvfQibNQiaWz5VUDocbQSYYe3hM60YBT0t6AWkzDjcIFFgQxckUUn64nQ/0&quot;); opacity: 0; z-index: 0;"><a target="_blank" href="http://v.qq.com/x/cover/mv3e2ecbtloy44o.html?vid=u01960zjo7r">banner</a></li><li style="background-image: url(&quot;https://shp.qpic.cn/mmpay/oU5xbewRJuv0wHAj5rxw34SXVgoycsicBB7zpopLBoGzl6S7EicZPsOPsyfj90NG2I/0&quot;); opacity: 0.0374614; z-index: 0;"><a target="_blank" href="http://v.qq.com/x/cover/mv3e2ecbtloy44o.html?vid=u01960zjo7r">banner</a></li><li style="background-image: url(&quot;https://shp.qpic.cn/mmpay/oU5xbewRJuupH9MJ5hbqw5sMmlyyn0UnUicF2UeHLKEkCO11MnS1DoXXicX3gOwfuK/0&quot;); opacity: 0.962539; z-index: 1;"><a target="_blank" href="http://v.qq.com/x/cover/mv3e2ecbtloy44o.html?vid=u01960zjo7r">banner</a></li><li style="background-image: url(&quot;https://shp.qpic.cn/mmpay/oU5xbewRJuuZ81jvVm2RMN2C3hBE2oKW6UjJKs99mAZRxGOdCFYkyMU8NxHLDlLQ/0&quot;); opacity: 0; z-index: 0;"><a target="_blank" href="http://v.qq.com/x/cover/mv3e2ecbtloy44o.html?vid=u01960zjo7r">banner</a></li></ul><ol class="dots" style="opacity: 1; z-index: 1;"><li class="dot">1</li><li class="dot">2</li><li class="dot">3</li><li class="dot active">4</li><li class="dot">5</li></ol></div>
+    <div class="wrap">
+    	<div class="wrap-login">
+                <div class="login">
+        	<div class="login-in">
+                <h2><span class="hide">微信支付</span>商户登录</h2>
+                <div class="tips-warn clr hide" id="IDBrowserSafariTips"><i class="warn"></i><p>由于Safari浏览器安全策略，如密码输入出现异常，请根据指引修改Safari浏览器配置，
+                <a href="/help_guide/login_guide.shtml" target="_blank">查看指引</a></p></div>
+                <div class="tips-warn clr hide" id="IDBrowserMacChromeTips"><i class="warn"></i><p>
+                如密码输入出现异常，请根据指引修改浏览器配置，
+                <a href="https://pay.weixin.qq.com/index.php/public/cms/content_detail?platformType=0&amp;lang=zh&amp;id=29000 " target="_blank">查看指引。</a></p></div>
+
+								
+				                <div class="tips-error"><i class="ico-error"></i><p id="errmsg" style="color:red"></p></div>
+				
+                <!-- 交互说明
+                     1. 给样式"login-form"添加样式"login-account-on",显示账号获焦效果
+                     2. 给样式"login-form"添加样式"login-password-on",显示密码获焦效果
+                -->
+                <form class="login-form login-password-on" action="/index.php/core/home/d_login_transition" method="post">
+                    <div class="login-mainly">
+                        <div class="login-account"><label class="ico-account" for="" title="登录帐号">登录帐号</label><input type="text" name="username" placeholder="登录帐号" id="idUserName"></div>
+                        <div class="login-password" id="mmpayPwdEdit"><label class="ico-password" for="" title="登录密码">登录密码</label><input type="password" name="password" placeholder="登录密码" id="idPassword"></div>
+                    </div>
+
+                                            <input type="hidden" name="return_url" value="/index.php">
+                                        <input type="hidden" name="login_type" value="0">
+                    <input id="token" type="hidden" name="ecc_csrf_token" value="09fea609a8fe5bb18f2a4233f6b3be97">
+
+                    					   <div class="login-verify "><input type="text" name="checkword_in" maxlength="4" placeholder="验证码"><input type="hidden" name="need_check" value="1"><img class="img-verify change-verify" src="http://captcha.qq.com/getimage?aid=755049101&amp;rd=0.5810887427875335" style="height:40px;width:100px;"><a class="change-verify" href="#">换一张</a></div>
+                                     </form>
+                <div class="login-memory"><label id="memory_username_label" class="memory-account" for=""><i class="cbx" id="memory_username"></i>记住帐号</label><a class="forget-password" href="/index.php/public/reset_pass" onclick="pgvSendClick({hottag:'PAY.HOME.LOGIN_BOX.FORGET_PASSWORD'});">忘记密码？</a></div>
+                <a class="btn-login" href="javascript:void(0);" id="do_login" onclick="pgvSendClick({hottag:'PAY.HOME.LOGIN_BOX.LOGIN_BUTTON'});">登录</a>
+            </div>
+        </div>
+                        <input id="seed" type="hidden" name="time_seed" value="31343932363037383038">
+    </div>
+    </div>    
+    
+</div>
+<!-- 登录 ]] -->
+
+<!-- 内容[[ -->
+<div class="container">
+    <div class="wrap">
+        <!-- 最新公告[[ -->
+        <div class="cms-notice cms-area clr" id="cmsanm_6000" home="true" link-list-id="6200"><h2>最新公告</h2><ul><li><span class="time">[03.31]</span><a target="_blank" href="/index.php/public/cms/content_detail?lang=zh&amp;id=46401" title="清明节期间商户结算付款及提现业务付款时间通知 ">清明节期间商户结算付款及提现业务付款时间通知 </a></li><li><span class="time">[02.10]</span><a target="_blank" href="/index.php/public/cms/content_detail?lang=zh&amp;id=41201" title="微信支付企业付款业务调整公告">微信支付企业付款业务调整公告</a></li><li><span class="time">[11.30]</span><a target="_blank" href="/index.php/public/cms/content_detail?lang=zh&amp;id=30001" title="《商户平台使用手册》正式上线">《商户平台使用手册》正式上线</a></li></ul><p class="more"><a href="/public/cms/content_list?lang=zh&amp;id=6200" target="_blank">更多公告&gt;&gt;</a></p></div>
+        <!-- 最新公告 ]] -->
+
+        <!-- 四大支付方式[[ -->
+        <div class="payment">
+        	<h2>接入微信支付</h2>
+            <ul class="clr">
+                <li>
+                    <a href="https://pay.weixin.qq.com/guide/webbased_payment.shtml" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.APPLY.IN_APP_WEB'});">
+                        <span class="icon ico-web"></span>
+                        <strong class="title">公众号支付</strong>
+                        <span class="intro">在微信内的商家页面上完成公众号支付</span>
+                        <span class="apply">我要接入</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://pay.weixin.qq.com/guide/inapp_payment.shtml" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.APPLY.IN_APP'});">
+                        <span class="icon ico-app"></span>
+                        <strong class="title">APP支付</strong>
+                        <span class="intro">在APP中，调起微信进行APP支付</span>
+                        <span class="apply">我要接入</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://pay.weixin.qq.com/guide/qrcode_payment.shtml" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.APPLY.QR_CODE'});">
+                        <span class="icon ico-qrcode"></span>
+                        <strong class="title">扫码支付</strong>
+                        <span class="intro">扫描二维码(包含PC网站)进行扫码支付</span>
+                        <span class="apply">我要接入</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://pay.weixin.qq.com/guide/quick_pay.shtml" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.APPLY.QUICK_PAY'});">
+                        <span class="icon ico-quick"></span>
+                        <strong class="title">刷卡支付</strong>
+                        <span class="intro">用户展示条码，商户扫描完成刷卡支付</span>
+                        <span class="apply">我要接入</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://pay.weixin.qq.com/guide/weixin_checkout.shtml" target="_blank" onclick="pgvSendClick({hottag:'PAY.HOME.APPLY.CHECKOUT'});">
+                        <span class="icon ico-checkout"></span>
+                        <strong class="title">微信买单</strong>
+                        <span class="intro">自助开通、无需开发，一分钟上线微信支付</span>
+                        <span class="apply">我要接入</span>
+                        <span class="corner"></span>
+                    </a>
+                </li>                
+            </ul>
+        </div>
+        <!-- 四大支付方式 ]] -->
+
+        <!-- 微信支付商户通[[ -->
+  
+        <div class="tenant">
+	  <h2>微信支付商户通</h2>
+        	<ul>
+                <li class="l1">如何快速接入<strong>微信支付</strong>？</li>
+                <li class="l2">了解最新的<strong>支付技术接口</strong>？</li>
+                <li class="l3"><strong>微信商户</strong>后台操作有疑问？</li>
+                <li class="l4"><strong>微信现金红包</strong>怎么玩？</li>
+                <li class="l5">掌握最新的<strong>微信行业解决方案</strong>？</li>
+                <li class="l6">获取一手的<strong>微信支付官方动态</strong>？</li>
+            </ul>
+        </div>
+        <!-- 微信支付商户通 ]] -->
+    </div>
+</div>
+<!-- 内容 ]] -->
+
+<script src="https://www.tenpay.com/v2/res/js/global/tenpayctrl_v2-min.js"></script>
+<script>window["MCH.tenpaycertV2.time"]=[new Date()]</script>
+<script id="legos:22410" ver="22410:20151023:20170106102318" name="MCH.tenpaycertV2" src="https://wx.gtimg.com/mch/js/ver/2015/10/mch.tenpaycertV2.20151023.js?t=20170106102318" charset="utf-8"></script><!--[if !IE]>|xGv00|09219d01d9d2312179afd1ffbb55230b<![endif]--><!--[if !IE]>|xGv00|8ab59df4495293a71573934cfa4d640c<![endif]-->
+<script>window["MCH.home.time"]=[new Date()]</script>
+<script id="legos:22134" ver="22134:20140516:20170105201629" name="MCH.home" charset="utf-8">
+window['MCH.home.time'] && window['MCH.home.time'].push(new Date());
+function $addToken(url,type,skey){var token=$getToken(skey);if(url==""||(url.indexOf("://")<0?location.href:url).indexOf("http")!=0){return url;}
+if(url.indexOf("#")!=-1){var f1=url.match(/\?.+\#/);if(f1){var t=f1[0].split("#"),newPara=[t[0],"&g_tk=",token,"&g_ty=",type,"#",t[1]].join("");return url.replace(f1[0],newPara);}else{var t=url.split("#");return[t[0],"?g_tk=",token,"&g_ty=",type,"#",t[1]].join("");}}
+return token==""?(url+(url.indexOf("?")!=-1?"&":"?")+"g_ty="+type):(url+(url.indexOf("?")!=-1?"&":"?")+"g_tk="+token+"&g_ty="+type);};var $ajax=(function(window,undefined){var oXHRCallbacks,xhrCounter=0;var fXHRAbortOnUnload=window.ActiveXObject?function(){for(var key in oXHRCallbacks){oXHRCallbacks[key](0,1);}}:false;return function(opt){var o={url:'',method:'GET',data:null,type:"text",async:true,cache:false,timeout:0,autoToken:true,username:'',password:'',beforeSend:$empty(),onSuccess:$empty(),onError:$empty(),onComplete:$empty()};for(var key in opt){o[key]=opt[key]}
+var callback,timeoutTimer,xhrCallbackHandle,ajaxLocation,ajaxLocParts;try{ajaxLocation=location.href;}
+catch(e){ajaxLocation=document.createElement("a");ajaxLocation.href="";ajaxLocation=ajaxLocation.href;}
+ajaxLocParts=/^([\w\+\.\-]+:)(?:\/\/([^\/?#:]*)(?::(\d+)|)|)/.exec(ajaxLocation.toLowerCase())||[];o.isLocal=/^(?:about|app|app\-storage|.+\-extension|file|res|widget):$/.test(ajaxLocParts[1]);o.method=(typeof(o.method)!="string"||o.method.toUpperCase()!="POST")?"GET":"POST";o.data=(typeof o.data=="string")?o.data:$makeUrl(o.data);if(o.method=='GET'&&o.data){o.url+=(o.url.indexOf("?")<0?"?":"&")+o.data;}
+if(o.autoToken){o.url=$addToken(o.url,"ajax");}
+o.xhr=$xhrMaker();if(o.xhr===null){return false;}
+try{if(o.username){o.xhr.open(o.method,o.url,o.async,o.username,o.password);}
+else{o.xhr.open(o.method,o.url,o.async);}}
+catch(e){o.onError(-2,e);return false;}
+if(o.method=='POST'){o.xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');}
+if(!o.cache){o.xhr.setRequestHeader('If-Modified-Since','Thu, 1 Jan 1970 00:00:00 GMT');o.xhr.setRequestHeader('Cache-Control','no-cache');}
+o.beforeSend(o.xhr);if(o.async&&o.timeout>0){if(o.xhr.timeout===undefined){timeoutTimer=setTimeout(function(){if(o.xhr&&callback){callback(0,1);}
+o.onError(0,null,'timeout');},o.timeout);}
+else{o.xhr.timeout=o.timeout;o.xhr.ontimeout=function(){if(o.xhr&&callback){callback(0,1);}
+o.onError(0,null,'timeout');};}}
+o.xhr.send(o.method=='POST'?o.data:null);callback=function(e,isAbort){if(timeoutTimer){clearTimeout(timeoutTimer);timeoutTimer=undefined;}
+if(callback&&(isAbort||o.xhr.readyState===4)){callback=undefined;if(xhrCallbackHandle){o.xhr.onreadystatechange=$empty();if(fXHRAbortOnUnload){try{delete oXHRCallbacks[xhrCallbackHandle];}
+catch(e){}}}
+if(isAbort){if(o.xhr.readyState!==4){o.xhr.abort();}}
+else{var status,statusText,responses;responses={headers:o.xhr.getAllResponseHeaders()};status=o.xhr.status;try{statusText=o.xhr.statusText;}
+catch(e){statusText="";}
+try{responses.text=o.xhr.responseText;}
+catch(e){responses.text="";}
+if(!status&&o.isLocal){status=responses.text?200:404;}
+else if(status===1223){status=204;}
+if(status>=200&&status<300){responses.text=responses.text.replace(/<!--\[if !IE\]>[\w\|]+<!\[endif\]-->/g,'');switch(o.type){case'text':o.onSuccess(responses.text);break;case"json":var json;try{json=(new Function("return ("+responses.text+")"))();}
+catch(e){o.onError(status,e,responses.text);}
+if(json){o.onSuccess(json);}
+break;case"xml":o.onSuccess(o.xhr.responseXML);break;}}
+else{if(status===0&&o.timeout>0){o.onError(status,null,'timeout');}
+else{o.onError(status,null,statusText);}}
+o.onComplete(status,statusText,responses);}
+delete o.xhr;}};if(!o.async){callback();}
+else if(o.xhr.readyState===4){setTimeout(callback,0);}
+else{xhrCallbackHandle=++xhrCounter;if(fXHRAbortOnUnload){if(!oXHRCallbacks){oXHRCallbacks={};if(window.attachEvent){window.attachEvent("onunload",fXHRAbortOnUnload);}
+else{window["onunload"]=fXHRAbortOnUnload;}}
+oXHRCallbacks[xhrCallbackHandle]=callback;}
+o.xhr.onreadystatechange=callback;}};})(window,undefined);function $empty(){return function(){return true;}};function $getCookie(name){var reg=new RegExp("(^| )"+name+"(?:=([^;]*))?(;|$)"),val=document.cookie.match(reg);return val?(val[2]?unescape(val[2]):""):null;};function $getToken(skey){var skey=skey?skey:$getCookie("skey");return skey?$time33(skey):"";};function $makeUrl(data){var arr=[];for(var k in data){arr.push(k+"="+data[k]);};return arr.join("&");};function $namespace(name){for(var arr=name.split(','),r=0,len=arr.length;r<len;r++){for(var i=0,k,name=arr[r].split('.'),parent={};k=name[i];i++){i===0?eval('(typeof '+k+')==="undefined"?('+k+'={}):"";parent='+k):(parent=parent[k]=parent[k]||{});}}};function $setCookie(name,value,expires,path,domain,secure){var exp=new Date(),expires=arguments[2]||null,path=arguments[3]||"/",domain=arguments[4]||null,secure=arguments[5]||false;expires?exp.setMinutes(exp.getMinutes()+parseInt(expires)):"";document.cookie=name+'='+escape(value)+(expires?';expires='+exp.toGMTString():'')+(path?';path='+path:'')+(domain?';domain='+domain:'')+(secure?';secure':'');};function $strTrim(str,code){var argus=code||"\\s";var temp=new RegExp("(^"+argus+"*)|("+argus+"*$)","g");return str.replace(temp,"");};function $time33(str){for(var i=0,len=str.length,hash=5381;i<len;++i){hash+=(hash<<5)+str.charAt(i).charCodeAt();};return hash&0x7fffffff;};function $xhrMaker(){var xhr;try{xhr=new XMLHttpRequest();}catch(e){try{xhr=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{xhr=new ActiveXObject("Microsoft.XMLHTTP");}catch(e){xhr=null;}}};return xhr;};$namespace("MCH.home");MCH.home={tenpayEdit:''};MCH.home.init=function(){homeThat=this;homeThat.tenpayEdit=new MCH.mmpayEdit({bindObjId:"mmpayPwdEdit",width:258,height:44},{isShowFunc:MCH.home.isShowFunc,returnCallBack:MCH.home.editShowReturn},this);this.bind();Common.exdAttrBrowser();};MCH.home.isShowFunc=function(){var username=$strTrim($(".login-form").find("input[name=username]").val());if(Common.isTenpayMchByName(username)){return true;}else{return false;}};MCH.home.editShowReturn=function(editRet){var browserFunc=function(){var sys=Common.getBrowserVersion();if(sys.osType=="mac"&&sys.browserName=="Safari"){$("#IDBrowserSafariTips").removeClass("hide");}else if(sys.osType=="mac"&&sys.browserName=="Chrome"&&sys.browserVersion>="47"){$("#IDBrowserMacChromeTips").removeClass("hide");}else if(sys.osType=="windows"&&sys.browserName!="IE"){$("#IDBrowserMacChromeTips").removeClass("hide");}};try{var version=editRet.editObj.ctrl.Version.toString();if(version&&(version>1206)){return true;}else{browserFunc();}}catch(e){browserFunc();}};MCH.home.focus_fuc=function(){$(".login-form").removeClass("login-account-on");$(".login-form").addClass("login-password-on");};MCH.home.blur_fuc=function(){$(".login-form").removeClass("login-password-on");};MCH.home.enter_fuc=function(){return null;};MCH.home.ossAttrIncAPI=function(id,key){var postData='id='+id+'&key='+key;$ajax({url:'/webreport/ossattrapi',data:postData,method:'post',type:'json',async:true,onSuccess:function(data){},onError:function(msg){}});};MCH.home.userNameBlur=function(){var username=$(".login-form").find("input[name=username]").val();var length=username.length;switch(length){case 0:MCH.home.ossAttrIncAPI(63769,18);break;case 1:MCH.home.ossAttrIncAPI(63769,19);break;case 2:MCH.home.ossAttrIncAPI(63769,20);break;case 3:MCH.home.ossAttrIncAPI(63769,21);break;case 4:MCH.home.ossAttrIncAPI(63769,22);break;case 5:MCH.home.ossAttrIncAPI(63769,23);break;case 6:MCH.home.ossAttrIncAPI(63769,24);break;case 7:MCH.home.ossAttrIncAPI(63769,25);break;case 8:MCH.home.ossAttrIncAPI(63769,26);break;case 9:MCH.home.ossAttrIncAPI(63769,27);break;case 10:MCH.home.ossAttrIncAPI(63769,28);break;default:MCH.home.ossAttrIncAPI(63769,29);break;}
+var ua=navigator.userAgent.toLowerCase();var reg=/[Aa]ndroid/;if(reg.test(ua)){MCH.home.ossAttrIncAPI(63769,31);}else{MCH.home.ossAttrIncAPI(63769,32);}};MCH.home.bind=function(){$("input[name=username]").focus();if($getCookie("username")){MCH.home.ossAttrIncAPI(63769,30);$("input[name=username]").val($getCookie("username"));$("#memory_username").addClass('cbx-on');}
+$("input[name=username]").on('focus',function(){MCH.home.ossAttrIncAPI(63769,17);$(".login-form").removeClass("login-password-on");$(".login-form").addClass("login-account-on");});$("input[name=password]").on('focus',function(){$(".login-form").removeClass("login-account-on");$(".login-form").addClass("login-password-on");homeThat.tenpayEdit.show();});$("input[name=username]").on('blur',function(){MCH.home.userNameBlur();$(".login-form").removeClass("login-account-on");$(".login-form").addClass("login-password-on");homeThat.tenpayEdit.show();});$("#memory_username_label").on('click',function(){if($('#memory_username').hasClass('cbx-on')){$('#memory_username').removeClass('cbx-on');}else{$('#memory_username').addClass('cbx-on');}});$("#do_login").on('click',function(){$("#errmsg").text("").addClass('hide');var temp_usrname=$(".login-form").find("input[name=username]").val();$(".login-form").find("input[name=username]").val($strTrim(temp_usrname));if($("#memory_username").hasClass('cbx-on')){$setCookie('username',$("input[name=username]").val(),'3600');}else{$setCookie('username',$("input[name=username]").val());}
+var username=$(".login-form").find("input[name=username]").val();var password=$(".login-form").find("input[name=password]").val();password=homeThat.tenpayEdit.getPwd();if(username&&password){password=Common.encryptPassword(password);if($(".login-verify").html()){if($("input[name=checkword_in]").val()){if($("input[name=checkword_in]").val().length!=4){$("#errmsg").text('请检查验证码').removeClass('hide');}else{$(".login-form").find("input[name=password]").val(password);$(".login-form").submit();}}
+else{$("#errmsg").text('请输入验证码').removeClass('hide');}}else{$(".login-form").find("input[name=password]").val(password);$(".login-form").submit();}}else{if(username.length==0&&password===false){$("#errmsg").text('请输入帐号和密码').removeClass('hide');}else if(username.length==0){$("#errmsg").text('请输入登录帐号').removeClass('hide');}else{$("#errmsg").text(homeThat.tenpayEdit.errmsg).removeClass('hide');}}});};MCH.home.init();
+window['MCH.home']='22134:20140516:20170105201629';
+window['MCH.home.time'] && window['MCH.home.time'].push(new Date());
+</script><!--[if !IE]>|xGv00|6f5e5c77fe153f6e42ad173204c021c5<![endif]-->
+<script>window["MCH.cms.time"]=[new Date()]</script>
+<script id="legos:22392" ver="22392:20151027:20160810123858" name="MCH.cms" src="https://wx.gtimg.com/mch/js/ver/2015/10/mch.cms.20151027.js?t=20160810123858" charset="utf-8"></script><!--[if !IE]>|xGv00|b299de016a6e1f795625ccbc51c6c029<![endif]-->
+
+<!-- 底部[[ -->
+<div class="footer">
+    <div class="wrap">
+        <p>
+            <a target="_blank" href="http://help.tenpay.com/cgi-bin/helpcenter/help_center.cgi?id=1&amp;type=0">关于财付通</a>
+            <i class="vs">|</i>
+            <a target="_blank" href="https://pay.weixin.qq.com/index.php/core/home/pay_pact_v4">平台使用协议</a>
+            <i class="vs">|</i>
+            <a href="https://pay.weixin.qq.com/index.php/public/apply_sign/protocol_v2" target="_blank">支付服务协议</a>
+            <i class="vs">|</i>
+            Powered By Tencent &amp; Tenpay　Copyright© 2005-<script>
+var year="";
+mydate=new Date();
+myyear=mydate.getYear();
+year=(myyear > 200) ? myyear : 1900 + myyear;
+document.write(year); 
+</script>2017 Tenpay All Rights Reserved.
+        </p>
+        <p>
+            <a target="_blank" href="http://weixin.qq.com/">微信</a>
+            <i class="vs">|</i>
+            <a target="_blank" href="https://mp.weixin.qq.com/">微信公众平台</a>
+            <i class="vs">|</i>
+            <a target="_blank" href="https://open.weixin.qq.com/">微信开放平台</a>
+            <i class="vs">|</i>
+            <a target="_blank" href="http://e.qq.com/">广点通</a>
+            <i class="vs">|</i>
+            <a target="_blank" href="http://open.qq.com/">腾讯开放平台</a>
+        </p>
+    </div>
+</div>
+<script type="text/javascript">if(typeof $jqueryUi == "undefined"){document.write('<script type="text/javascript" src="https://wx.gtimg.com/third/jquery/jquery-ui.js"></script"+">');}</script><script type="text/javascript" src="https://wx.gtimg.com/third/jquery/jquery-ui.js"></script"+">
+<script>window["MCH.footer.time"]=[new Date()]</script>
+<script id="legos:22125" ver="22125:20140422:20161206161027" name="MCH.footer" charset="utf-8">
+window['MCH.footer.time'] && window['MCH.footer.time'].push(new Date());
+function $addToken(url,type,skey){var token=$getToken(skey);if(url==""||(url.indexOf("://")<0?location.href:url).indexOf("http")!=0){return url;}
+if(url.indexOf("#")!=-1){var f1=url.match(/\?.+\#/);if(f1){var t=f1[0].split("#"),newPara=[t[0],"&g_tk=",token,"&g_ty=",type,"#",t[1]].join("");return url.replace(f1[0],newPara);}else{var t=url.split("#");return[t[0],"?g_tk=",token,"&g_ty=",type,"#",t[1]].join("");}}
+return token==""?(url+(url.indexOf("?")!=-1?"&":"?")+"g_ty="+type):(url+(url.indexOf("?")!=-1?"&":"?")+"g_tk="+token+"&g_ty="+type);};var $ajax=(function(window,undefined){var oXHRCallbacks,xhrCounter=0;var fXHRAbortOnUnload=window.ActiveXObject?function(){for(var key in oXHRCallbacks){oXHRCallbacks[key](0,1);}}:false;return function(opt){var o={url:'',method:'GET',data:null,type:"text",async:true,cache:false,timeout:0,autoToken:true,username:'',password:'',beforeSend:$empty(),onSuccess:$empty(),onError:$empty(),onComplete:$empty()};for(var key in opt){o[key]=opt[key]}
+var callback,timeoutTimer,xhrCallbackHandle,ajaxLocation,ajaxLocParts;try{ajaxLocation=location.href;}
+catch(e){ajaxLocation=document.createElement("a");ajaxLocation.href="";ajaxLocation=ajaxLocation.href;}
+ajaxLocParts=/^([\w\+\.\-]+:)(?:\/\/([^\/?#:]*)(?::(\d+)|)|)/.exec(ajaxLocation.toLowerCase())||[];o.isLocal=/^(?:about|app|app\-storage|.+\-extension|file|res|widget):$/.test(ajaxLocParts[1]);o.method=(typeof(o.method)!="string"||o.method.toUpperCase()!="POST")?"GET":"POST";o.data=(typeof o.data=="string")?o.data:$makeUrl(o.data);if(o.method=='GET'&&o.data){o.url+=(o.url.indexOf("?")<0?"?":"&")+o.data;}
+if(o.autoToken){o.url=$addToken(o.url,"ajax");}
+o.xhr=$xhrMaker();if(o.xhr===null){return false;}
+try{if(o.username){o.xhr.open(o.method,o.url,o.async,o.username,o.password);}
+else{o.xhr.open(o.method,o.url,o.async);}}
+catch(e){o.onError(-2,e);return false;}
+if(o.method=='POST'){o.xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');}
+if(!o.cache){o.xhr.setRequestHeader('If-Modified-Since','Thu, 1 Jan 1970 00:00:00 GMT');o.xhr.setRequestHeader('Cache-Control','no-cache');}
+o.beforeSend(o.xhr);if(o.async&&o.timeout>0){if(o.xhr.timeout===undefined){timeoutTimer=setTimeout(function(){if(o.xhr&&callback){callback(0,1);}
+o.onError(0,null,'timeout');},o.timeout);}
+else{o.xhr.timeout=o.timeout;o.xhr.ontimeout=function(){if(o.xhr&&callback){callback(0,1);}
+o.onError(0,null,'timeout');};}}
+o.xhr.send(o.method=='POST'?o.data:null);callback=function(e,isAbort){if(timeoutTimer){clearTimeout(timeoutTimer);timeoutTimer=undefined;}
+if(callback&&(isAbort||o.xhr.readyState===4)){callback=undefined;if(xhrCallbackHandle){o.xhr.onreadystatechange=$empty();if(fXHRAbortOnUnload){try{delete oXHRCallbacks[xhrCallbackHandle];}
+catch(e){}}}
+if(isAbort){if(o.xhr.readyState!==4){o.xhr.abort();}}
+else{var status,statusText,responses;responses={headers:o.xhr.getAllResponseHeaders()};status=o.xhr.status;try{statusText=o.xhr.statusText;}
+catch(e){statusText="";}
+try{responses.text=o.xhr.responseText;}
+catch(e){responses.text="";}
+if(!status&&o.isLocal){status=responses.text?200:404;}
+else if(status===1223){status=204;}
+if(status>=200&&status<300){responses.text=responses.text.replace(/<!--\[if !IE\]>[\w\|]+<!\[endif\]-->/g,'');switch(o.type){case'text':o.onSuccess(responses.text);break;case"json":var json;try{json=(new Function("return ("+responses.text+")"))();}
+catch(e){o.onError(status,e,responses.text);}
+if(json){o.onSuccess(json);}
+break;case"xml":o.onSuccess(o.xhr.responseXML);break;}}
+else{if(status===0&&o.timeout>0){o.onError(status,null,'timeout');}
+else{o.onError(status,null,statusText);}}
+o.onComplete(status,statusText,responses);}
+delete o.xhr;}};if(!o.async){callback();}
+else if(o.xhr.readyState===4){setTimeout(callback,0);}
+else{xhrCallbackHandle=++xhrCounter;if(fXHRAbortOnUnload){if(!oXHRCallbacks){oXHRCallbacks={};if(window.attachEvent){window.attachEvent("onunload",fXHRAbortOnUnload);}
+else{window["onunload"]=fXHRAbortOnUnload;}}
+oXHRCallbacks[xhrCallbackHandle]=callback;}
+o.xhr.onreadystatechange=callback;}};})(window,undefined);function $empty(){return function(){return true;}};function $getCookie(name){var reg=new RegExp("(^| )"+name+"(?:=([^;]*))?(;|$)"),val=document.cookie.match(reg);return val?(val[2]?unescape(val[2]):""):null;};function $getToken(skey){var skey=skey?skey:$getCookie("skey");return skey?$time33(skey):"";};function $makeUrl(data){var arr=[];for(var k in data){arr.push(k+"="+data[k]);};return arr.join("&");};function $namespace(name){for(var arr=name.split(','),r=0,len=arr.length;r<len;r++){for(var i=0,k,name=arr[r].split('.'),parent={};k=name[i];i++){i===0?eval('(typeof '+k+')==="undefined"?('+k+'={}):"";parent='+k):(parent=parent[k]=parent[k]||{});}}};function $time33(str){for(var i=0,len=str.length,hash=5381;i<len;++i){hash+=(hash<<5)+str.charAt(i).charCodeAt();};return hash&0x7fffffff;};function $xhrMaker(){var xhr;try{xhr=new XMLHttpRequest();}catch(e){try{xhr=new ActiveXObject("Msxml2.XMLHTTP");}catch(e){try{xhr=new ActiveXObject("Microsoft.XMLHTTP");}catch(e){xhr=null;}}};return xhr;};$namespace("MCH.footer");MCH.footer={searchChildMerchantTimer:'',searchChildMerchantName:'',protocolDG:'',protocolCbx:'',protocolBtn:''};MCH.footer.init=function(){footerThat=this;footerThat.bind();footerThat.changeVerify();MCH.footer.protocolDG=Common.getPop('MchProtocolDG');MCH.footer.protocolBtn=$('#MchProtocolBn');MCH.footer.protocolCbx=Common.getCbx({id:'MchProtocolCbx',onCheck:function(){MCH.footer.protocolBtn.removeClass('btn-default').addClass('btn-primary');},onUnCheck:function(){MCH.footer.protocolBtn.removeClass('btn-primary').addClass('btn-default');}});MCH.footer.checkSignProtocol();};MCH.footer.bind=function(){footerThat.bindChangeCheckimg();footerThat.bindDatepicker();MCH.header.bindCloseDialog();footerThat.bindSelect();$('#MchProtocolBn').on('click',function(){if(MCH.footer.protocolCbx.isCheck()){var postData=Common.getCrsfToken();var ret=false;$ajax({url:'/index.php/core/merchant/sign_mch_protocol',data:postData,method:'post',type:'json',async:false,onSuccess:function(data){MCH.header.handleAjax(data);if(data.errorcode!=0){ret=false;}else{ret=true;}},onError:function(msg){ret=false;}});if(!ret){MCH.header.showErrorAlertDialog('操作失败,请稍后重试');}else{MCH.footer.protocolDG.close();}}});};MCH.footer.changeVerify=function(){if($(".img-verify").size()>0){$(".img-verify").attr("src","http://captcha.qq.com/getimage?aid=755049101&rd="+Math.random());}};MCH.footer.bindChangeCheckimg=function(){$(".change-verify").on('click',function(){footerThat.changeVerify();});$(".checkimg-input").on('keydown',function(){var value=$(this).val();result=false;if(value.length==4){var token_name=$("#token").attr("name");var hash=$("#token").val();var post_data=token_name+'='+hash+'&verify_word='+value;$ajax({url:'/index.php/core/home/vaild_checkimg',data:post_data,method:'post',type:'json',async:false,onSuccess:function(data){if(data.errorcode==0){result=true;}else{}},onError:function(msg){result=false;}});}});};MCH.footer.bindDatepicker=function(timepicker){if($(".datepicker-input").size()<=0){return false;}
+false?$jqueryUi():'';timepicker=timepicker?true:false;var format='Y-m-d';if(timepicker){format='Y-m-d H:i';}
+$('.datepicker-input').datetimepicker({defaultTime:'00:00:00',step:1,format:format,lang:'ch',timepicker:timepicker,yearStart:1970,closeOnDateSelect:true});$("input.datepicker-input").next("i.ico-date").on('click',function(){$(this).prev('input.datepicker-input').focus();});};MCH.footer.bindSelect=function(){$("div.dropdown-menu").on('click',function(){$(this).addClass('open');});$("ul.dropdown-list").on('click','li',function(){var value=$(this).children("a").attr('data-target');var text=$(this).children("a").text();var drop_switch=$(this).parent().prev("a.dropdown-switch");drop_switch.attr('data-target',value);drop_switch.children('label').text(text);var id=drop_switch.children('label').attr('id');var name=drop_switch.children('label').html();$(this).parent().parent().removeClass('open');typeof SelectCallBack=='function'&&SelectCallBack(id,name);return false;});$("div.dropdown-menu").mouseleave(function(){if($(this).hasClass('open')){$(this).removeClass('open');}});};MCH.footer.searchChildMerchant=function(params){var obj=params['obj'];var value=obj.val();if(value!=MCH.footer.searchChildMerchantName){return false;}
+var merchants={};var curpage=params['curpage'];var total_page=1;var isAppend=params['isAppend'];var list=obj.parent().parent().children('ul.dropdown-list');if(!isAppend){list.children().remove();}
+var token_name=$("#token").attr("name");var hash=$("#token").val();var post_data=token_name+'='+hash+'&merchant_name='+value+'&page_num='+curpage;$ajax({url:'/index.php/extend/child_merchant/query_merchant_by_name',data:post_data,method:'post',type:'json',async:true,onSuccess:function(data){if(data.errorcode==0){merchants=data.data.list;curpage=data.data.curpage;total_page=data.data.total_page;for(var key in merchants){var model='<li><a href="#" data-target="'+key+'">'+merchants[key]+'</a></li>';list.append(model);}
+if(curpage<total_page){var nextPage=parseInt(curpage,10)+1;var model='<dl class="jsDropDownLiMerchantMore"><a href="#" data-target="'+nextPage+'">获取更多子商户</a></dl>';list.append(model);}}},onError:function(msg){}});};MCH.footer.checkSignProtocol=function(){var whiteUrl=['/index.php/core/home','/index.php/core/apply_progress','/index.php/core/apply_bank','/index.php/core/apply_sign','/index.php/core/merchantupgrading','/index.php/core/submerchant/create_sub_merchant','/index.php/public/cms'];var localtion=window.location.pathname;prefix='/index.php';if(localtion.substr(0,prefix.length)!=prefix){localtion=prefix+localtion;}
+for(var i=0;i<whiteUrl.length;i++){if(localtion.substr(0,whiteUrl[i].length)==whiteUrl[i]){return;}}
+var postData=Common.getCrsfToken();$ajax({url:'/index.php/public/merchant/check_sign_protocol',data:postData,method:'post',type:'json',async:true,onSuccess:function(data){MCH.header.handleAjax(data);if(data.errorcode!=0){MCH.footer.protocolDG.open();}},onError:function(msg){}});};MCH.footer.init();
+window['MCH.footer']='22125:20140422:20161206161027';
+window['MCH.footer.time'] && window['MCH.footer.time'].push(new Date());
+</script><!--[if !IE]>|xGv00|f223e6d2e6d5217ac8b233a5d7602c18<![endif]-->
+<script>TA_STATS_ARGS={}</script>
+<script type="text/javascript" src="https://tajs.qq.com/res/js/wechatpay.min.js" charset="UTF−8"></script>
+<!-- <script type="text/javascript" src="https://res.wx.qq.com/payactres/zh_CN/htmledition/js/lib/analysis/2.0/lib-min.js" charset="UTF−8" async="async" defer="defer"></script> -->
+<!--[if !IE]>|xGv00|f5ede3a717a9f61ace3f2ab9101502d0<![endif]-->
+<!-- 底部 ]] -->
+<script language="javascript" src="https://pingjs.qq.com/tcss.ping.https.js"></script>
+<script language="javascript">
+    if(typeof(pgvMain) == 'function')
+        pgvMain();
+</script>
+<script>
+$(function(){
+    $(".content-us").mouseover(function(){
+		$(this).addClass("show-popup-arrow");
+	});
+	$(".dropdown-box").mouseout(function(){
+		$(this).removeClass("show-dropdown-body");
+	});
+  
+});
+</script>
+
+
+<!--[if !IE]>|xGv00|2e71b95584b0c67ca1da68f777510fcb<![endif]--></body></html>
